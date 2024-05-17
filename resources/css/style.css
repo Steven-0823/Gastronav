@@ -1,0 +1,214 @@
+:root{
+    --colorPrincipal: #D9D9D9;
+    --colorSecundario: #FFC300;
+    --colorTerciario: #ffffff;
+    --colorCuarto: #DE1515;
+
+    --fuentePrincipal:"Bebas Neue", sans-serif;
+    --fuenteSecundaria:"PT Sans Narrow", sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+
+}
+body{
+    font-size: 1.8rem;
+    font-family: var(--fuenteSecundaria);
+    background-image: url(../../Imagenes/Fondo.jpg);
+}
+
+h1, h2, h3, h4{
+
+    font-family: var(--fuentePrincipal); 
+    margin: 0;
+    
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.8rem;
+}
+
+h4{
+    font-size: 2.3rem;
+}
+
+p{
+    font-size: 1.8rem;
+}
+
+/* Estilos para el login*/
+
+.fondobody{
+    background-color: rgba(255, 255, 255, .7);
+    height: 68rem;
+    padding-bottom: 5rem;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login_logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+}
+
+.logo_imagen{
+    width: 20rem;
+}
+
+.imagen__redes{
+    transition-property: transform;
+    transition-duration: .5s;
+}
+
+.imagen__redes:hover{
+   transform: scale(1.1, 1.2);
+}
+
+.container_login{
+    background-color: #FDF8FA;
+    
+    padding-right: 4rem;
+    padding-left: 4rem;
+    border-radius: 2rem;
+    padding-bottom: 3.5rem;
+    padding-top: 3rem;
+}
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.formulario_item{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.form_contra{
+    font-weight: 700;
+}
+
+.formu_contra{
+    border: solid 1px #e1e1e1;
+    height: 3rem;
+}
+
+.boton_formulario{
+    background-color: var(--colorSecundario);
+    width: 13rem;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 1rem;
+    color: var(--colorTerciario);
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+}
+
+.boton_formulario:hover{
+    background-color: var(--colorCuarto);
+    cursor: pointer;
+}
+
+.formulario_boton{
+    display: flex;
+    justify-content: center;
+}
+
+.formulario_link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.olvidar{
+    text-decoration: none;
+    color: var(--colorSecundario);
+}
+
+.olvidar-modify{
+    color: #000000;
+}
+
+/*Borde de abajo Footer
+*/
+.footer{
+    background-color: #FF9C44;
+    height: 20rem;
+    
+}
+
+.container_modify{
+    height: 20rem;
+    
+}
+
+.navegacion_menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.link_nav{
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--colorTerciario)
+    
+}
+
+.link_nav:hover{
+    color:#000000;
+}
+
+.iconos_redes{
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    padding-top: 1rem;  
+
+}
+
+/* validaciones */
+
+.error{
+    background-color: #D83B38;
+    padding: 1rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+
+}
