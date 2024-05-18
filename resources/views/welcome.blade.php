@@ -102,7 +102,7 @@
                             <div class="contenedor__lugares">
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="turismo">
-                                        <img class="img__lugares" src="https://i.ibb.co/64DLQcH/San-Antonio.jpg" alt="sanantonio">
+                                        <img class="img__lugares" src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/2d/01/0a.jpg" alt="sanantonio">
                                         <h2>San Antonio</h2>
                                         <p>Lindo barrio, lleno de historia y una buena gastronomía, su parque es hermoso con algunas
                                             calles antiguas en piedra, tiene teatros y distintos espacios para compartir en familia o
@@ -120,7 +120,7 @@
                 
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="turismo">
-                                        <img class="img__lugares" src="https://i.ibb.co/r4Kb4QB/Cristorey.jpg" alt="Cristorey">
+                                        <img class="img__lugares" src="https://tubarco.news/wp-content/uploads/2023/10/Screenshot_2023-10-11-09-48-57-190_com.zhiliaoapp.musically-5-9.jpg" alt="Cristorey">
                                         <h2>Cristo Rey</h2>
                                         <p>Lindo lugar, lleno de historia, su sitios es hermoso para pasar tiempo al aire libre y con un
                                             mirador
@@ -138,7 +138,7 @@
                 
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="turismo">
-                                        <img class="img__lugares" src="https://i.ibb.co/1rmfF1w/Parque-Gatos.jpg" alt="parquegatos">
+                                        <img class="img__lugares" src="https://www.orgullodecali.com/wp-content/uploads/2022/01/Las-Gatas-del-Gato.jpg" alt="parquegatos">
                                         <h2>Parque Gatos</h2>
                                         <p> Un sitio el cual contiene muchas esculturas de distintos gatos, un parque hermoso donde
                                             puedes compartir con tu familia
@@ -157,7 +157,7 @@
                             <div class="contenedor__restaurantes">
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="restaurante">
-                                        <img class="img__lugares" src="https://i.ibb.co/3hg853w/cantinala15.jpg" alt="cantina">
+                                        <img class="img__lugares" src="https://media-cdn.tripadvisor.com/media/photo-s/26/f4/bc/07/los-mejores-espacios.jpg" alt="cantina">
                                         <h2>Cantina la 15</h2>
                                         <p>Un restaurante con distintas variedades y buena gastronomía, platos exquisitos un buen lugar
                                             con espacios para compartir en familia o con amigos
@@ -172,13 +172,10 @@
                                 </div>
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="restaurante">
-                                        <img class="img__lugares" src="https://i.ibb.co/pn17Wgz/storieamor.jpg" alt="storie">
+                                        <img class="img__lugares" src="https://media-cdn.tripadvisor.com/media/photo-s/27/a2/c2/34/storia-d-amore-barranquilla.jpg" alt="storie">
                                         <h2>Storia d'amore</h2>
-                                        <p>Lindo barrio, lleno de historia y una buena gastronomía, en especial la colina de San
-                                            Antonio, su
-                                            parque es hermoso con algunas calles antiguas en piedra, tiene teatros, restaurantes, bares,
-                                            parques
-                                            y distintos espacios para compartir en familia o con amigos
+                                        <p>Es un espacio dedicado al amor que sentimos por Italia. Encontrarás productos de alta calidad, presentaciones únicas,   
+                                            aromas que te harán soñar y texturas que te sorprenderán. ¡Cruza la puerta principal y disfruta del viaje
                                         </p>
                                     </div>
                                     <div class="aggcomentario">
@@ -190,13 +187,9 @@
                                 </div>
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="restaurante">
-                                        <img class="img__lugares" src="https://i.ibb.co/BtdCB4R/odiseo.jpg" alt="odiseobistro">
+                                        <img class="img__lugares" src="https://media-cdn.tripadvisor.com/media/photo-s/28/1d/33/48/odiseo-bistro.jpg" alt="odiseobistro">
                                         <h2> Odiseo Bistro </h2>
-                                        <p>Lindo barrio, lleno de historia y una buena gastronomía, en especial la colina de San
-                                            Antonio, su
-                                            parque es hermoso con algunas calles antiguas en piedra, tiene teatros, restaurantes, bares,
-                                            parques
-                                            y distintos espacios para compartir en familia o con amigos
+                                        <p>Con Odiseo, buscábamos un espacio majestuoso, pero al mismo tiempo cálido
                                         </p>
                 
                                     </div>
@@ -275,8 +268,8 @@
                         </div>
                     </footer>
                 
-                    @vite(['resources/js/app.js', 'resources/js/carruser.js','resources/js/validacionesindex.js'])
-                    @vite(['resources/css/normalize.css', 'resources/css/indexstyle.css'])
+                    @vite(['public/js/app.js', 'public/js/carruser.js','public/js/validacionesindex.js'])
+                    @vite(['public/css/normalize.css', 'public/css/indexstyle.css'])
                 </div>
             </div>
         </div>

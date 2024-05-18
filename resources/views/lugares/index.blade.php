@@ -97,18 +97,23 @@
         <div class="row">
           @foreach ($lugares as $lugar)
             <div class="col-md-4 mb-4">
-              <div class="card">
-                <img src="{{ $lugar->imagen }}" class="card-img-top" alt="{{ $lugar->name }}" style="height: 400px; object-fit: cover;">
+              <div class="card h-100">
+                <img src="{{ $lugar->imagen }}" class="card-img-top" alt="{{ $lugar->name }}" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
-                  <h2 class="card-title"><strong>{{ $lugar->name }}</strong></h2>
-                  <p class="card-text">{{ $lugar->descripcion }}</p>
-                  <p class="card-text"><small class="text-muted">Categoría: <strong>{{ $lugar->nombre_categoria }}</strong></small></p>
-                  <a href="{{ route('lugar.edit', ['lugar' => $lugar->id]) }}" class="btn btn-info">Editar</a>
-                  <form action="{{ route('lugar.destroy', ['lugar' => $lugar->id]) }}" method="POST" class="d-inline">
-                    @method('delete')
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                  </form>
+                  <h5 class="card-title"><strong>{{ $lugar->name }}</strong></h5>
+                  <p class="card-text"><strong>Descripción:</strong> {{ $lugar->descripcion }}</p>
+                  <p class="card-text"><strong>Categoría:</strong> {{ $lugar->nombre_categoria }}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                  <div>
+                    <a href="{{ route('lugar.edit', ['lugar' => $lugar->id]) }}" class="btn btn-info">Editar</a>
+                    <form action="{{ route('lugar.destroy', ['lugar' => $lugar->id]) }}" method="POST" style="display: inline-block">
+                      @method('delete')
+                      @csrf
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                  </div>
+                  <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($lugar->direccion) }}" target="_blank" class="btn btn-warning">¿Cómo llegar?</a>
                 </div>
               </div>
             </div>

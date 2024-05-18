@@ -6,7 +6,9 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <div class="login_logo">
+                            <img class="logo_imagen" src="/Imagenes/Logo.png" alt="imagen_logo" width="85xp">
+                        </div>
                     </a>
                 </div>
 
@@ -15,14 +17,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('categoria.index')" :active="request()->routeIs('categoria.index')">
-                        {{ __('Lista de categorias') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('restaurante.index')" :active="request()->routeIs('restaurante.index')">
-                        {{ __('Lista de restaurantes') }}
+                        {{ __('Restaurantes') }}
                     </x-nav-link>
                     <x-nav-link :href="route('lugar.index')" :active="request()->routeIs('lugar.index')">
-                        {{ __('Lista de sitio turisticos') }}
+                        {{ __('Sitios turisticos') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -55,6 +54,12 @@
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('roles.index')">
+                                {{ __('Roles') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('categoria.index')">
+                                {{ __('Categorias') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

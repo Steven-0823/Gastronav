@@ -56,7 +56,7 @@ p{
 
 .fondobody{
     background-color: rgba(255, 255, 255, .7);
-    height: 80rem;
+    height: 68rem;
     padding-bottom: 5rem;
 }
 
@@ -70,16 +70,16 @@ p{
     
 }
 
-.register_logo{
+.login_logo{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 18rem;
+    height: 20rem;
 }
 
 .logo_imagen{
-    width: 18rem;
+    width: 20rem;
 }
 
 .imagen__redes{
@@ -105,7 +105,7 @@ p{
     grid-template-columns: 1fr;
     gap: 2rem;
 }
-    
+
 .formulario_item{
    display: flex;
    flex-direction: column;
@@ -118,7 +118,7 @@ p{
 
 .formu_contra{
     border: solid 1px #e1e1e1;
-    height: 3rem;
+    height: 2.8rem;
 }
 
 .boton_formulario{
@@ -126,7 +126,7 @@ p{
     width: 13rem;
     padding: 1rem 0;
     border: none;
-    border-radius: 1rem;
+    border-radius: 2rem;
     color: var(--colorTerciario);
     font-weight: 700;
     text-decoration: none;
@@ -164,12 +164,12 @@ p{
 */
 .footer{
     background-color: #FF9C44;
-    height: 18rem;
+    height: 20rem;
     
 }
 
 .container_modify{
-    height: 15rem;
+    height: 20rem;
     
 }
 
@@ -202,7 +202,8 @@ p{
 
 }
 
-/*validaciones*/
+/* validaciones */
+
 .error{
     background-color: #D83B38;
     padding: 1rem;

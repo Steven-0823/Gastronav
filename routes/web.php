@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\SitiosTuristicosController;
+use App\Http\Controllers\RolesController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -60,6 +62,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/Lugares/{lugar}', [SitiosTuristicosController::class, 'destroy'])->name('lugar.destroy');
     Route::put('/Lugares/{lugar}', [SitiosTuristicosController::class,'update'])->name('lugar.update');
     Route::get('/Lugares/{lugar}/edit', [SitiosTuristicosController::class, 'edit'])->name('lugar.edit');
+
+    Route::get('/Roles',[RolesController::class,'index'])->name('roles.index');
+    Route::post('/Roles',[RolesController::class,'store'])->name('roles.store');
+    Route::get('/Roles/create', [RolesController::class, 'create'])->name('roles.create');
+    Route::delete('/Roles/{roles}', [RolesController::class, 'destroy'])->name('roles.destroy');
+    Route::put('/Roles/{roles}', [RolesController::class,'update'])->name('roles.update');
+    Route::get('/Roles/{roles}/edit', [RolesController::class, 'edit'])->name('roles.edit');
 });
 
 

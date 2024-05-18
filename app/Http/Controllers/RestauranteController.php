@@ -80,20 +80,21 @@ class RestauranteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $restaurante = new Restaurante();
+        $restaurante = Restaurante::find($id);
         $restaurante->name = $request->name;
         $restaurante->descripcion = $request->descripcion;
         $restaurante->direccion = $request->direccion;
         $restaurante->imagen = $request->imagen;
         $restaurante->categoria_id = $request->categoria_id;
         $restaurante->telefono = $request->telefono;
-        $restaurante->horario_apertura = $request->horario_apertura . ':00';
-        $restaurante->horario_cierre = $request->horario_cierre . ':00';
-    // Guardar los cambios en la base de datos
-    $restaurante->save();
-
-    // Redirigir a la ruta index después de actualizar el restaurante
-    return redirect()->route('restaurante.index')->with('success', 'Restaurante actualizado correctamente');
+        $restaurante->horario_apertura = $request->horario_apertura;
+        $restaurante->horario_cierre = $request->horario_cierre;
+        
+        // Guardar los cambios en la base de datos
+        $restaurante->save();
+    
+        // Redirigir a la ruta index después de actualizar el restaurante
+        return redirect()->route('restaurante.index')->with('success', 'Restaurante actualizado correctamente');
     }
 
     /**

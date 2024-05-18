@@ -56,7 +56,7 @@ p{
 
 .fondobody{
     background-color: rgba(255, 255, 255, .7);
-    height: 68rem;
+    height: 80rem;
     padding-bottom: 5rem;
 }
 
@@ -70,16 +70,16 @@ p{
     
 }
 
-.login_logo{
+.register_logo{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20rem;
+    height: 18rem;
 }
 
 .logo_imagen{
-    width: 20rem;
+    width: 18rem;
 }
 
 .imagen__redes{
@@ -105,7 +105,7 @@ p{
     grid-template-columns: 1fr;
     gap: 2rem;
 }
-
+    
 .formulario_item{
    display: flex;
    flex-direction: column;
@@ -114,11 +114,14 @@ p{
 
 .form_contra{
     font-weight: 700;
+    
 }
 
 .formu_contra{
     border: solid 1px #e1e1e1;
-    height: 3rem;
+    height: 4rem; /* Ajusta la altura según tus necesidades */
+    padding: 1rem; /* Ajusta el padding según tus necesidades */
+    font-size: 1.8rem; /* Aumenta el tamaño de la fuente */
 }
 
 .boton_formulario{
@@ -141,6 +144,7 @@ p{
 .formulario_boton{
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem; /* Añadir espacio entre los botones */
 }
 
 .formulario_link{
@@ -164,12 +168,12 @@ p{
 */
 .footer{
     background-color: #FF9C44;
-    height: 20rem;
+    height: 18rem;
     
 }
 
 .container_modify{
-    height: 20rem;
+    height: 15rem;
     
 }
 
@@ -202,8 +206,7 @@ p{
 
 }
 
-/* validaciones */
-
+/*validaciones*/
 .error{
     background-color: #D83B38;
     padding: 1rem;
