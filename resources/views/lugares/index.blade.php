@@ -89,7 +89,7 @@
           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Listado de Sitios Turísticos') }}
           </h2>
-          <a href="{{ route('lugar.create') }}" class="btn btn-success">Agregar Sitio</a>
+          <a href="{{ route('lugar.create') }}" class="btn btn-success">Add Sitio</a>
         </div>
       </x-slot>
 
@@ -110,7 +110,7 @@
                     <form action="{{ route('lugar.destroy', ['lugar' => $lugar->id]) }}" method="POST" style="display: inline-block">
                       @method('delete')
                       @csrf
-                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                      <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                   </div>
                   <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($lugar->direccion) }}" target="_blank" class="btn btn-warning">¿Cómo llegar?</a>

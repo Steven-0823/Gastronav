@@ -61,7 +61,7 @@
             </select>
         </div>
           <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Update</button>
         <a href="{{ route('lugar.index') }}" class="btn btn-warning">Cancelar</a>
         </div>
       </form>

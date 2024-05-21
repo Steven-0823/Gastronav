@@ -78,7 +78,7 @@
         </div>
         
           <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Update</button>
         <a href="{{ route('restaurante.index') }}" class="btn btn-warning">Cancelar</a>
         </div>
       </form>

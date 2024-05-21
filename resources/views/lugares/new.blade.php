@@ -46,7 +46,7 @@
               @endforeach
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary">Save</button>
           <a href="{{ route('lugar.index') }}" class="btn btn-warning">Cancelar</a>
       </form>
     </div>

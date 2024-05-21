@@ -61,6 +61,14 @@
                             <x-dropdown-link :href="route('categoria.index')">
                                 {{ __('Categorias') }}
                             </x-dropdown-link>
+                            <x-dropdown-link>
+                                <li class="list-group-item">
+                                    <a href="backup.php">
+                                        Realizar Back-Up
+                                        {{-- <img src="{{ asset('public/respaldo.png') }}" > Realizar BackUp --}}
+                                    </a>
+                                </li>
+                            </x-dropdown-link>
                         </form>
                     </x-slot>
                 </x-dropdown>

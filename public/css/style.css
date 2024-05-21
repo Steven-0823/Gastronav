@@ -141,6 +141,7 @@ p{
 .formulario_boton{
     display: flex;
     justify-content: center;
+    padding: 2rem;
 }
 
 .formulario_link{

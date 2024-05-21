@@ -60,7 +60,7 @@
             <input type="datetime-local" class="form-control" id="horario_cierre" name="horario_cierre" aria-describedby="horarioCierreHelp">
         </div>
         
-          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary">Save</button>
           <a href="{{ route('restaurante.index') }}" class="btn btn-warning">Cancelar</a>
       </form>
     </div>

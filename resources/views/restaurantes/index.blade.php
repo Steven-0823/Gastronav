@@ -92,17 +92,21 @@
     <title>Restaurantes Gatronav</title>
   </head>
   <body>
+    
     <x-app-layout>
+      
       <x-slot name="header">
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Listado de restaurantes') }}
           </h2>
+          
           <a href="{{route('restaurante.create')}}" class="btn btn-success">Add Restaurante</a>
         </div>
       </x-slot>
       
       <div class="container mt-4">
+      
         <div class="row">
             @foreach ($restaurantes as $restaurante)
             <div class="col-md-4 mb-4">
@@ -111,7 +115,7 @@
                     <div class="card-body">
                         <h2 class="card-title"><strong>{{$restaurante->name}}</strong></h2>
                         <p class="card-text"><strong>Descripción:</strong> {{$restaurante->descripcion}}</p>
-                        <p class="card-text"><strong>Categoría:</strong> {{$restaurante->categoria_id}}</p>
+                        <p class="card-text"><strong>Categoría:</strong> {{$restaurante->nombre_categoria}}</p>
                         <p class="card-text"><strong>Teléfono:</strong> {{$restaurante->telefono}}</p>
                         <p class="card-text"><strong>Horario:</strong> {{$restaurante->horario_apertura}} - {{$restaurante->horario_cierre}}</p>
                     </div>
