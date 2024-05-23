@@ -24,18 +24,30 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre del restaurante: </label>
                 <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+                @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
             </div>
         <div class="mb-3">
             <label for="descripcion" class="form-label">Descripcion: </label>
             <input type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="descripcionHelp">
+            @error('descripcion')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
           </div>
           <div class="mb-3">
             <label for="direccion" class="form-label">Direccion: </label>
             <input type="text" class="form-control" id="direccion" name="direccion" aria-describedby="direccionHelp">
+            @error('direccion')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
           </div>
           <div class="mb-3">
             <label for="imagen" class="form-label">Imagen URL: </label>
             <input type="text" class="form-control" id="imagen" name="imagen" aria-describedby="imagenHelp">
+            @error('imagen')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
           </div>
           <div class="mb-3">
             <label for="categoria_id" class="form-label">Categoria: </label>
@@ -45,19 +57,31 @@
                 <option value="{{$categoria->id}}">{{$categoria->name}}</option>
               @endforeach
             </select>
+            @error('categoria_id')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
           </div>
           <div class="mb-3">
             <label for="telefono" class="form-label">Telefono: </label>
             <input type="text" class="form-control" id="telefono" name="telefono" aria-describedby="telefonoHelp">
+            @error('telefono')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
           </div>
           <div class="mb-3">
             <label for="horario_apertura" class="form-label">Horario de apertura: </label>
             <input type="datetime-local" class="form-control" id="horario_apertura" name="horario_apertura" aria-describedby="horarioAperturaHelp">
+            @error('horario_apertura')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
         </div>
         
         <div class="mb-3">
             <label for="horario_cierre" class="form-label">Horario de cierre: </label>
             <input type="datetime-local" class="form-control" id="horario_cierre" name="horario_cierre" aria-describedby="horarioCierreHelp">
+            @error('horario_cierre')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
         </div>
         
           <button type="submit" class="btn btn-primary">Save</button>

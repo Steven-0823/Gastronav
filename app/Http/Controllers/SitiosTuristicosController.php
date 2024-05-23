@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sitio_Turistico;
 use App\Models\Categoria;
-
 use Illuminate\Support\Facades\DB;
 
 class SitiosTuristicosController extends Controller
@@ -16,11 +15,11 @@ class SitiosTuristicosController extends Controller
     public function index()
     {
         $lugares = DB::table('_sitio_turistico')
-        ->join('categories', '_sitio_turistico.categoria_id', '=', 'categories.id')
-        ->select('_sitio_turistico.*', 'categories.name as nombre_categoria')
-        ->get();
+            ->join('categories', '_sitio_turistico.categoria_id', '=', 'categories.id')
+            ->select('_sitio_turistico.*', 'categories.name as nombre_categoria')
+            ->get();
     
-    return view('lugares.index', ['lugares' => $lugares]);
+        return view('lugares.index', ['lugares' => $lugares]);
     }
 
     /**
@@ -38,15 +37,22 @@ class SitiosTuristicosController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'direccion' => 'required|string',
+            'imagen' => 'required|string',
+            'categoria_id' => 'required|exists:categories,id',
+        ]);
+
         $lugar = new Sitio_Turistico();
-        $lugar->name = $request->name;
-        $lugar->descripcion = $request->descripcion;
-        $lugar->direccion = $request->direccion;
-        $lugar->imagen = $request->imagen;
-        $lugar->categoria_id = $request->categoria_id;
+        $lugar->name = $validatedData['name'];
+        $lugar->descripcion = $validatedData['descripcion'];
+        $lugar->direccion = $validatedData['direccion'];
+        $lugar->imagen = $validatedData['imagen'];
+        $lugar->categoria_id = $validatedData['categoria_id'];
     
         $lugar->save();   
-    
     
         return redirect()->route('lugar.index')->with('success', 'Restaurante creado correctamente');
     }
@@ -73,24 +79,31 @@ class SitiosTuristicosController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-{
-    // Encuentra el sitio turístico existente por su ID
-    $lugar = Sitio_Turistico::find($id);
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'direccion' => 'required|string',
+            'imagen' => 'required|string',
+            'categoria_id' => 'required|exists:categories,id',
+        ]);
 
-    // Actualiza los campos con los datos del formulario
-    $lugar->name = $request->name;
-    $lugar->descripcion = $request->descripcion;
-    $lugar->direccion = $request->direccion;
-    $lugar->imagen = $request->imagen;
-    $lugar->categoria_id = $request->categoria_id;
+        // Encuentra el sitio turístico existente por su ID
+        $lugar = Sitio_Turistico::find($id);
 
-    // Guarda los cambios
-    $lugar->save();
+        // Actualiza los campos con los datos validados del formulario
+        $lugar->name = $validatedData['name'];
+        $lugar->descripcion = $validatedData['descripcion'];
+        $lugar->direccion = $validatedData['direccion'];
+        $lugar->imagen = $validatedData['imagen'];
+        $lugar->categoria_id = $validatedData['categoria_id'];
 
-    // Redirige a la página de índice con un mensaje de éxito
-    return redirect()->route('lugar.index')->with('success', 'Sitio turístico actualizado correctamente');
-}
+        // Guarda los cambios
+        $lugar->save();
 
+        // Redirige a la página de índice con un mensaje de éxito
+        return redirect()->route('lugar.index')->with('success', 'Sitio turístico actualizado correctamente');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -100,7 +113,7 @@ class SitiosTuristicosController extends Controller
         $lugar = Sitio_Turistico::find($id);
         $lugar->delete();
     
-    // Redirigir a la ruta index después de eliminar el restaurante
-    return redirect()->route('lugar.index')->with('success', 'Restaurante eliminado correctamente');
+        // Redirigir a la ruta index después de eliminar el restaurante
+        return redirect()->route('lugar.index')->with('success', 'Restaurante eliminado correctamente');
     }
 }

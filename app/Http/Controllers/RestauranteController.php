@@ -15,12 +15,11 @@ class RestauranteController extends Controller
     public function index()
     {
         $restaurantes = DB::table('restaurantes')
-        ->join('categories', 'restaurantes.categoria_id', '=', 'categories.id')
-        ->select('restaurantes.*', 'categories.name as nombre_categoria')
-        ->get();
-    
-    return view('restaurantes.index', ['restaurantes' => $restaurantes]);
-    
+            ->join('categories', 'restaurantes.categoria_id', '=', 'categories.id')
+            ->select('restaurantes.*', 'categories.name as nombre_categoria')
+            ->get();
+        
+        return view('restaurantes.index', ['restaurantes' => $restaurantes]);
     }
 
     /**
@@ -37,32 +36,31 @@ class RestauranteController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    
-
-    $restaurante = new Restaurante();
-    $restaurante->name = $request->name;
-    $restaurante->descripcion = $request->descripcion;
-    $restaurante->direccion = $request->direccion;
-    $restaurante->imagen = $request->imagen;
-    $restaurante->categoria_id = $request->categoria_id;
-    $restaurante->telefono = $request->telefono;
-    $restaurante->horario_apertura = $request->horario_apertura . ':00';
-    $restaurante->horario_cierre = $request->horario_cierre . ':00';
-
-    $restaurante->save();   
-
-
-    return redirect()->route('restaurante.index')->with('success', 'Restaurante creado correctamente');
-}
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'direccion' => 'required|string|max:255',
+            'imagen' => 'required|url',
+            'categoria_id' => 'required|exists:categories,id',
+            'telefono' => 'nullable|string|max:20',
+            'horario_apertura' => 'required|date_format:H:i',
+            'horario_cierre' => 'required|date_format:H:i|after:horario_apertura',
+        ]);
+
+        $restaurante = new Restaurante();
+        $restaurante->name = $request->name;
+        $restaurante->descripcion = $request->descripcion;
+        $restaurante->direccion = $request->direccion;
+        $restaurante->imagen = $request->imagen;
+        $restaurante->categoria_id = $request->categoria_id;
+        $restaurante->telefono = $request->telefono;
+        $restaurante->horario_apertura = $request->horario_apertura . ':00';
+        $restaurante->horario_cierre = $request->horario_cierre . ':00';
+
+        $restaurante->save();   
+
+        return redirect()->route('restaurante.index')->with('success', 'Restaurante creado correctamente');
     }
 
     /**
@@ -80,6 +78,17 @@ class RestauranteController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+            'direccion' => 'required|string|max:255',
+            'imagen' => 'required|url',
+            'categoria_id' => 'required|exists:categories,id',
+            'telefono' => 'nullable|string|max:20',
+            'horario_apertura' => 'required|date_format:H:i',
+            'horario_cierre' => 'required|date_format:H:i|after:horario_apertura',
+        ]);
+
         $restaurante = Restaurante::find($id);
         $restaurante->name = $request->name;
         $restaurante->descripcion = $request->descripcion;
@@ -101,12 +110,11 @@ class RestauranteController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-{
-    $restaurante = Restaurante::find($id);
-    $restaurante->delete();
-    
-    // Redirigir a la ruta index después de eliminar el restaurante
-    return redirect()->route('restaurante.index')->with('success', 'Restaurante eliminado correctamente');
-}
-
+    {
+        $restaurante = Restaurante::find($id);
+        $restaurante->delete();
+        
+        // Redirigir a la ruta index después de eliminar el restaurante
+        return redirect()->route('restaurante.index')->with('success', 'Restaurante eliminado correctamente');
+    }
 }

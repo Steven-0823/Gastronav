@@ -55,6 +55,9 @@
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
+                            @if(auth()->user()->isAdmin())
+                                            
+                                       
                             <x-dropdown-link :href="route('roles.index')">
                                 {{ __('Roles') }}
                             </x-dropdown-link>
@@ -69,6 +72,7 @@
                                     </a>
                                 </li>
                             </x-dropdown-link>
+                            @endif
                         </form>
                     </x-slot>
                 </x-dropdown>

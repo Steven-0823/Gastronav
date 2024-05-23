@@ -89,7 +89,9 @@
           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Listado de Sitios Turísticos') }}
           </h2>
+          @if(auth()->user()->isAdmin())                         
           <a href="{{ route('lugar.create') }}" class="btn btn-success">Add Sitio</a>
+          @endif
         </div>
       </x-slot>
 
@@ -106,12 +108,14 @@
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                   <div>
+                    @if(auth()->user()->isAdmin())                         
                     <a href="{{ route('lugar.edit', ['lugar' => $lugar->id]) }}" class="btn btn-info">Editar</a>
                     <form action="{{ route('lugar.destroy', ['lugar' => $lugar->id]) }}" method="POST" style="display: inline-block">
                       @method('delete')
                       @csrf
                       <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
+                    @endif
                   </div>
                   <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($lugar->direccion) }}" target="_blank" class="btn btn-warning">¿Cómo llegar?</a>
                 </div>
