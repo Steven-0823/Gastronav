@@ -40,9 +40,15 @@
                     <div class="formulario_item">
                         <label class="form_contra" for="password"> Password: </label>
                         <input class="formu_contra" placeholder=" Contraseña " id="password" type="password" name="password" required>
+                        <div class="validacion">
                         @error('password')
-                            <span class="text-red-600">{{ $message }}</span>
+                            <ul class="text-red-600">
+                                @foreach($errors->get('password') as $message)
+                                    <li>{{ $message }}</li>
+                                @endforeach
+                            </ul>
                         @enderror
+                        </div>
                     </div>
 
                     <div class="formulario_item">

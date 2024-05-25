@@ -33,6 +33,10 @@
     <div class="container">
             {{ $slot }}
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
     <footer class="footer">
         <div class="container container_modify">
             <h1> Gastronav </h1>

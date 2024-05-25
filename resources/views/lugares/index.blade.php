@@ -86,14 +86,18 @@
     <x-app-layout>
       <x-slot name="header">
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Listado de Sitios Turísticos') }}
-          </h2>
-          @if(auth()->user()->isAdmin())                         
-          <a href="{{ route('lugar.create') }}" class="btn btn-success">AñadirSitio</a>
-          @endif
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Listado de Sitios Turísticos') }}
+            </h2>
+            @if(auth()->user()->isAdmin())                         
+            <div class="d-flex align-items-center">
+                <a href="{{ route('lugar.create') }}" class="btn btn-success me-2">Añadir Sitio</a>
+                <a href="{{ route('lugar.pdf') }}" class="btn btn-primary">Ver reporte</a>
+            </div>
+            @endif
         </div>
-      </x-slot>
+    </x-slot>
+    
 
       <div class="container mt-4">
         <div class="row">

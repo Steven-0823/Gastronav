@@ -16,14 +16,19 @@
       
       <x-slot name="header">
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Listado de restaurantes') }}
-          </h2>
-          @if(auth()->user()->isAdmin())                         
-          <a href="{{route('restaurante.create')}}" class="btn btn-success">Añadir Restaurante</a>
-          @endif
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Listado de restaurantes') }}
+            </h2>
+            @if(auth()->user()->isAdmin())   
+            <div class="d-flex align-items-center">                      
+            <a href="{{route('restaurante.create')}}" class="btn btn-success me-2">Añadir Restaurante</a>
+            <a href="{{route('restaurante.pdf')}}" class="btn btn-primary">Ver reporte</a>
+            </div>
+            @endif
         </div>
-      </x-slot>
+    </x-slot>
+    
+    
       
       <div class="container mt-4">
       

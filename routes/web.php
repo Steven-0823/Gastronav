@@ -56,6 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/Restaurantes/{restaurante}', [RestauranteController::class, 'destroy'])->name('restaurante.destroy');
     Route::put('/Restaurantes/{restaurante}',[RestauranteController::class,'update']) ->name('restaurante.update');
     Route::get('/Restaurantes/{restaurante}/edit', [RestauranteController::class, 'edit'])->name('restaurante.edit');
+    Route::get('/Restaurantes/PDF',[RestauranteController::class,'pdf'])->name('restaurante.pdf');
 
     Route::get('/Lugares',[SitiosTuristicosController::class,'index'])->name('lugar.index');
     Route::post('/Lugares',[SitiosTuristicosController::class,'store'])->name('lugar.store');
@@ -63,6 +64,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/Lugares/{lugar}', [SitiosTuristicosController::class, 'destroy'])->name('lugar.destroy');
     Route::put('/Lugares/{lugar}', [SitiosTuristicosController::class,'update'])->name('lugar.update');
     Route::get('/Lugares/{lugar}/edit', [SitiosTuristicosController::class, 'edit'])->name('lugar.edit');
+    Route::get('/Lugares/PDF',[SitiosTuristicosController::class,'pdf'])->name('lugar.pdf');
+
 
     Route::get('/Roles',[RolesController::class,'index'])->name('roles.index');
     Route::post('/Roles',[RolesController::class,'store'])->name('roles.store');
@@ -70,7 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/Roles/{roles}', [RolesController::class, 'destroy'])->name('roles.destroy');
     Route::put('/Roles/{roles}', [RolesController::class,'update'])->name('roles.update');
     Route::get('/Roles/{roles}/edit', [RolesController::class, 'edit'])->name('roles.edit');
-    
+
     Route::get('/PQR', [PqrController::class, 'index'])->name('pqr.index');
 Route::post('/PQR', [PqrController::class, 'store'])->name('pqr.store');
 Route::get('/PQR/create', [PqrController::class, 'create'])->name('pqr.create');

@@ -28,30 +28,39 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => [
-                'required',
-                'string',
-                'min:8', // Mínimo 8 caracteres
-                'regex:/[A-Z]/', // Al menos una letra mayúscula
-                'regex:/[@$!%*#?&]/', // Al menos un carácter especial
-                'confirmed',
-            ],
-        ]);
+{
+    $messages = [
+        'password.regex' => 'La contraseña debe tener al menos 8 caracteres',
+        'password.regex'=> 'Debe incluir una mayúscula, un número y un carácter especial.',
+        'password.min' => 'La contraseña debe tener al menos :min caracteres.',
+        'password.confirmed' => 'Las contraseñas no coinciden.',
+    ];
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+        'password' => [
+            'required',
+            'string',
+            'min:8', // Mínimo 8 caracteres
+            'regex:/[A-Z]/', // Al menos una letra mayúscula
+            'regex:/[0-9]/', // Al menos un número
+            'regex:/[@$!%*#?&]/', // Al menos un carácter especial
+            'confirmed',
+        ],
+    ], $messages);
 
-        event(new Registered($user));
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
 
-        Auth::login($user);
+    event(new Registered($user));
 
-        return redirect(route('dashboard', absolute: false));
-    }
+    Auth::login($user);
+
+    return redirect(route('dashboard'));
+}
+
 }

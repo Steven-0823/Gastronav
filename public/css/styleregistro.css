@@ -97,12 +97,12 @@ p {
 
 .container_login {
     background-color: #FDF8FA;
-
     padding-right: 4rem;
     padding-left: 4rem;
     border-radius: 2rem;
     padding-bottom: 3.5rem;
-    padding-top: 3rem;
+    padding-top: 2rem;
+    
 }
 
 .formulario {
@@ -119,17 +119,34 @@ p {
 
 .form_contra {
     font-weight: 700;
-
 }
-
 .formu_contra {
     border: solid 1px #e1e1e1;
     height: 4rem;
-    /* Ajusta la altura según tus necesidades */
     padding: 1rem;
-    /* Ajusta el padding según tus necesidades */
     font-size: 1.8rem;
-    /* Aumenta el tamaño de la fuente */
+    width: 100%; /* Asegura que ambos campos ocupen el 100% del ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+.relative {
+    display: flex;
+    align-items: center;
+}
+
+.relative .password-input {
+    flex-grow: 1; /* Permite que el campo de entrada crezca y ocupe el espacio disponible */
+}
+
+.toggle-password-visibility {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 
 .boton_formulario {
@@ -223,4 +240,9 @@ p {
     text-align: center;
     font-weight: 700;
 
+}
+.validacion
+{
+font-size: medium;
+padding: 1rem;
 }

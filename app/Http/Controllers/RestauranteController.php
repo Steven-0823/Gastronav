@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Restaurante;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class RestauranteController extends Controller
 {
@@ -21,7 +23,13 @@ class RestauranteController extends Controller
         
         return view('restaurantes.index', ['restaurantes' => $restaurantes]);
     }
-
+    public function pdf()
+    {
+        $restaurantes = Restaurante::all();
+        $pdf = Pdf::loadView('restaurantes.pdf', compact('restaurantes'));
+        return $pdf->stream();
+        //return view('lugares.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      */

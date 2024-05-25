@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Sitio_Turistico;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class SitiosTuristicosController extends Controller
 {
@@ -20,6 +21,13 @@ class SitiosTuristicosController extends Controller
             ->get();
     
         return view('lugares.index', ['lugares' => $lugares]);
+    }
+    public function pdf()
+    {
+        $lugares = Sitio_Turistico::all();
+        $pdf = Pdf::loadView('lugares.pdf', compact('lugares'));
+        return $pdf->stream();
+        //return view('lugares.pdf');
     }
 
     /**

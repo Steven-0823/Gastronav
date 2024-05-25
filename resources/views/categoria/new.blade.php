@@ -24,10 +24,16 @@
         <div class="mb-3">
           <label for="name" class="form-label">Nombre de la categoria: </label>
           <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+          @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
         </div>
         <div class="mb-3">
             <label for="Descripcion" class="form-label">Descripcion: </label>
             <input type="text" class="form-control" id="Descripcion" name="Descripcion" aria-describedby="DescripcionHelp">
+            @error('Descripcion')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
           </div>
         <div class="mt-3">
         <button type="submit" class="btn btn-primary">Guardar</button>

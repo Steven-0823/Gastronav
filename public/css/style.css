@@ -110,15 +110,18 @@ p{
    display: flex;
    flex-direction: column;
    gap: 1rem;
+
 }
 
 .form_contra{
     font-weight: 700;
+    padding: .5rem;
 }
 
 .formu_contra{
     border: solid 1px #e1e1e1;
     height: 2.8rem;
+    width: 30rem;
 }
 
 .boton_formulario{
@@ -171,6 +174,7 @@ p{
 
 .container_modify{
     height: 20rem;
+    padding: 5rem;
     
 }
 
