@@ -29,8 +29,10 @@
                                 <div class="logo">
                                     <h2> <span class="blanco">Gas</span><span class="amarillo">tro</span><span class="rojo">nav</span></h2>
                                 </div>
+                               
                                 @if (Route::has('login'))
                                     <nav class="-mx-3 flex flex-1 justify-end">
+                                        
                                         @auth
                                             <a
                                                 href="{{ url('/dashboard') }}"

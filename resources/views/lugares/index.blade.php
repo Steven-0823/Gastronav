@@ -90,7 +90,7 @@
             {{ __('Listado de Sitios Turísticos') }}
           </h2>
           @if(auth()->user()->isAdmin())                         
-          <a href="{{ route('lugar.create') }}" class="btn btn-success">Add Sitio</a>
+          <a href="{{ route('lugar.create') }}" class="btn btn-success">AñadirSitio</a>
           @endif
         </div>
       </x-slot>
@@ -113,7 +113,7 @@
                     <form action="{{ route('lugar.destroy', ['lugar' => $lugar->id]) }}" method="POST" style="display: inline-block">
                       @method('delete')
                       @csrf
-                      <button type="submit" class="btn btn-danger">Delete</button>
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
                     @endif
                   </div>

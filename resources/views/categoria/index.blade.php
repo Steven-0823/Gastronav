@@ -17,7 +17,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Listado de categorias') }}
         </h2>
-        <a href="{{route('categoria.create')}}" class="btn btn-success">Add Category</a>
+        <a href="{{route('categoria.create')}}" class="btn btn-success">Añadir Categoria</a>
         </div>
     </x-slot>
     <div class="container">

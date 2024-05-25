@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Restaurantes Gatronav</title>
+    <title>Listado de PQRs</title>
   </head>
   <body>
     
@@ -17,40 +17,36 @@
       <x-slot name="header">
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Listado de restaurantes') }}
+            {{ __('Listado de PQRs') }}
           </h2>
-          @if(auth()->user()->isAdmin())                         
-          <a href="{{route('restaurante.create')}}" class="btn btn-success">Añadir Restaurante</a>
-          @endif
+                                 
+          <a href="{{route('pqr.create')}}" class="btn btn-success">Añadir PQR</a>
+          
         </div>
       </x-slot>
       
       <div class="container mt-4">
       
         <div class="row">
-            @foreach ($restaurantes as $restaurante)
+            @foreach ($pqrs as $pqr)
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="{{$restaurante->imagen}}" class="card-img-top" alt="Imagen del restaurante" style="height: 200px; object-fit: cover;">
+                    <img src="{{$pqr->imagen_pqr}}" class="card-img-top" alt="Imagen del PQR" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
-                        <h2 class="card-title"><strong>{{$restaurante->name}}</strong></h2>
-                        <p class="card-text"><strong>Descripción:</strong> {{$restaurante->descripcion}}</p>
-                        <p class="card-text"><strong>Categoría:</strong> {{$restaurante->nombre_categoria}}</p>
-                        <p class="card-text"><strong>Teléfono:</strong> {{$restaurante->telefono}}</p>
-                        <p class="card-text"><strong>Horario:</strong> {{$restaurante->horario_apertura}} - {{$restaurante->horario_cierre}}</p>
+                        <p class="card-text"><strong>Descripción:</strong> {{$pqr->descripcion}}</p>
+                        <p class="card-text"><strong>Categoría:</strong> {{$pqr->nombre_categoria}}</p>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
                         <div>
                           @if(auth()->user()->isAdmin())        
-                            <a href="{{route('restaurante.edit', ['restaurante'=>$restaurante->id]) }}" class="btn btn-info">Edit</a>
-                            <form action="{{ route('restaurante.destroy', ['restaurante' => $restaurante->id]) }}" method="POST" style="display: inline-block">
+                            <a href="{{route('pqr.edit', ['pqr' => $pqr->id]) }}" class="btn btn-info">Editar</a>
+                            <form action="{{ route('pqr.destroy', ['pqr' => $pqr->id]) }}" method="POST" style="display: inline-block">
                                 @method('delete')
                                 @csrf
-                                <input class="btn btn-danger" type="submit" value="Delete">
+                                <input class="btn btn-danger" type="submit" value="Eliminar">
                             </form>
-                            @endif
+                          @endif
                         </div>
-                        <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($restaurante->direccion) }}" target="_blank" class="btn btn-warning">¿Cómo llegar?</a>
                     </div>
                 </div>
             </div>

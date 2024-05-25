@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Add Categoria</title>
+    <title>Crear Categoria</title>
   </head>
   <body>
     <x-app-layout>
@@ -30,7 +30,7 @@
             <input type="text" class="form-control" id="Descripcion" name="Descripcion" aria-describedby="DescripcionHelp">
           </div>
         <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="{{route('categoria.index')}}" class="btn btn-warning">Cancel</a>
     </div>
       </form>

@@ -15,7 +15,7 @@
 
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Editar Sitios turisticos') }}
+                {{ __('Editar Sitios turísticos') }}
             </h2>
         </x-slot>
 
@@ -25,30 +25,42 @@
         @csrf
         <div class="mb-3">
           <label for="id" class="form-label">Id</label>
-          <input type="text" class="form-control" id="id" aria-describedby="idlHelp" name="id" 
-          disabled="disabled" value="{{ $lugar->id}}">
+          <input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id" 
+          disabled="disabled" value="{{ $lugar->id }}">
           <div id="idHelp" class="form-text">Id del restaurante</div>
         </div>
 
         <div class="mb-3">
           <label for="name" class="form-label">Nombre:</label>
           <input type="text" required class="form-control" id="name" placeholder="Nombre del Restaurante"
-          name="name" value="{{ $lugar->name}}">
+          name="name" value="{{ $lugar->name }}">
+          @error('name')
+            <div class="text-danger">{{ $message }}</div>
+          @enderror
         </div>
         <div class="mb-3">
             <label for="descripcion" class="form-label">Descripción: </label>
             <input type="text" required class="form-control" id="descripcion" placeholder="Descripción del Restaurante"
                    name="descripcion" value="{{ $lugar->descripcion }}">
+            @error('descripcion')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="direccion" class="form-label">Dirección: </label>
             <input type="text" required class="form-control" id="direccion" placeholder="Dirección del Restaurante"
                    name="direccion" value="{{ $lugar->direccion }}">
+            @error('direccion')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">URL de la Imagen: </label>
             <input type="text" required class="form-control" id="imagen" placeholder="URL de la Imagen del Restaurante"
                    name="imagen" value="{{ $lugar->imagen }}">
+            @error('imagen')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="categoria_id" class="form-label">Categoría: </label>
@@ -59,10 +71,13 @@
                     </option>
                 @endforeach
             </select>
+            @error('categoria_id')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
-          <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{{ route('lugar.index') }}" class="btn btn-warning">Cancelar</a>
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+          <a href="{{ route('lugar.index') }}" class="btn btn-warning">Cancelar</a>
         </div>
       </form>
     </div>

@@ -44,8 +44,8 @@ class RestauranteController extends Controller
             'imagen' => 'required|url',
             'categoria_id' => 'required|exists:categories,id',
             'telefono' => 'nullable|string|max:20',
-            'horario_apertura' => 'required|date_format:H:i',
-            'horario_cierre' => 'required|date_format:H:i|after:horario_apertura',
+            'horario_apertura' => 'required',
+            'horario_cierre' => 'required',
         ]);
 
         $restaurante = new Restaurante();
@@ -85,8 +85,8 @@ class RestauranteController extends Controller
             'imagen' => 'required|url',
             'categoria_id' => 'required|exists:categories,id',
             'telefono' => 'nullable|string|max:20',
-            'horario_apertura' => 'required|date_format:H:i',
-            'horario_cierre' => 'required|date_format:H:i|after:horario_apertura',
+            'horario_apertura' => 'required',
+            'horario_cierre' => 'required',
         ]);
 
         $restaurante = Restaurante::find($id);

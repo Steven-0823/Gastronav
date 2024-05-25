@@ -55,6 +55,9 @@
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
+                            <x-dropdown-link :href="route('pqr.index')">
+                                {{ __('PQRS') }}
+                            </x-dropdown-link>
                             @if(auth()->user()->isAdmin())
                                             
                                        

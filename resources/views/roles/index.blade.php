@@ -32,7 +32,7 @@
                     <td>{{ $role->name }}</td>
                     <td>{{ $role->descripcion }}</td>
                     <td>
-                        <a href="{{ route('roles.edit', ['roles' => $role->id]) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('roles.edit', ['roles' => $role->id]) }}" class="btn btn-info">Editar</a>
                         <form action="{{ route('roles.destroy', ['roles' => $role->id]) }}" method="POST" style="display: inline-block">
                             @method('DELETE')
                             @csrf

@@ -14,7 +14,7 @@
     <x-app-layout>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Add Restaurante') }}
+                {{ __('Añadir Restaurante') }}
             </h2>
         </x-slot>
         <div class="container">
@@ -60,7 +60,7 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
                 <a href="{{ route('lugar.index') }}" class="btn btn-warning">Cancelar</a>
             </form>
         </div>
