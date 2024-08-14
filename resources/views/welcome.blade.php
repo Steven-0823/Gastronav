@@ -104,7 +104,7 @@
                             <div class="contenedor__lugares">
                                 <div class="lugares">
                                     <div class="lugar" data-lugar="turismo">
-                                        <img class="img__lugares" src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/2d/01/0a.jpg" alt="sanantonio">
+                                        <img class="img__lugares" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/70/71/5d/church-on-the-hill.jpg?w=1200&h=-1&s=1" alt="sanantonio">
                                         <h2>San Antonio</h2>
                                         <p>Lindo barrio, lleno de historia y una buena gastronomía, su parque es hermoso con algunas
                                             calles antiguas en piedra, tiene teatros y distintos espacios para compartir en familia o
